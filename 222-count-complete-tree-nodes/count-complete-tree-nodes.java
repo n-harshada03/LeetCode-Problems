@@ -15,10 +15,7 @@
  */
 class Solution {
 
-    public void cNodes(TreeNode root,int count){
-        
-
-    }
+    
     public int countNodes(TreeNode root) {
         if(root==null){
             return 0;
