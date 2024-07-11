@@ -8,11 +8,9 @@ class Solution {
         while(left<right){
             double avg=(double) (nums[left]+nums[right])/2;
             list.add(avg);
-            System.out.println(avg);
             left++;
             right--;
         }       
-        System.out.println(list);
         Collections.sort(list);
         return list.get(0);
     }
