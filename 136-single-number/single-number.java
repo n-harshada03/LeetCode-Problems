@@ -1,10 +1,14 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        int ans = 0;
-        int n = nums.length;
-        for(int i=0; i<n; i++){
-            ans = ans^nums[i];
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            int count=0;
+            hm.put(nums[i],hm.getOrDefault(nums[i],0)+1);
         }
-        return ans;
+        for(int num:nums){
+            if(hm.get(num)==1) return num;
+
+        }
+        return -1;
     }
 }
