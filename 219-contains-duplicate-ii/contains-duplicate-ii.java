@@ -2,14 +2,12 @@ class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         HashMap<Integer,Integer> hm=new HashMap<>();
         for (int i=0;i<nums.length;i++){
-            int curr=nums[i];
-
-            if(hm.containsKey(curr)){
-                if(i-hm.get(curr)<=k){
+            if(hm.containsKey(nums[i])){
+                if(i-hm.get(nums[i])<=k){
                     return true;
                 }
             }
-            hm.put(curr,i);
+            hm.put(nums[i],i);
         }
         return false;
         
