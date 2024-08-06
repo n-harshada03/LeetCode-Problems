@@ -22,9 +22,9 @@ class Solution {
         int len = merge.length;
         double mid=0;
         if (len % 2 == 0) {
-            mid=(merge[len / 2 - 1] + merge[len / 2]) / 2.0;
+            mid=(merge[len/2 - 1] + merge[len/2]) / 2.0;
         } else {
-            mid=merge[len / 2];
+            mid=merge[len/2];
         }
 
         return mid;
