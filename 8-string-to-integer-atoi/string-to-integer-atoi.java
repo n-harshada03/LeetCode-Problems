@@ -19,11 +19,13 @@ class Solution {
         while(i<s.length() && Character.isDigit(s.charAt(i))){
             result= result*10 + (s.charAt(i)-'0');
             i++;
-        
-            if (result>Integer.MAX_VALUE) {
-                return sign == 1?Integer.MAX_VALUE : Integer.MIN_VALUE;
+            if(result*sign > Integer.MAX_VALUE){
+                return Integer.MAX_VALUE;
+            }else if(result*sign<Integer.MIN_VALUE){
+                return Integer.MIN_VALUE;
             }
         }
+        
     return (int) result*sign;   
     }
 }
