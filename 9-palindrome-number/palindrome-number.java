@@ -3,12 +3,13 @@ class Solution {
         if(x<0){
             return false;
         }
-        int copy=x;
+        int temp=x;
         int rev=0;
 
-        while(copy>0){
-            rev=rev*10 + (copy%10);
-            copy=copy/10;
+        while(temp>0){
+            int digit=temp%10;
+            rev=rev*10 + digit ;
+            temp=temp/10;
                        
         }
         return rev==x;
