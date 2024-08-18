@@ -23,8 +23,8 @@ class Solution {
             }
         }
 
-        sb.toString();
-        return new String(sb);
+        return sb.toString();
+        // return new String(sb);
 
 
 
