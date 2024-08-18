@@ -10,7 +10,6 @@ class Solution {
             else{
                 hm.put(ch,1);
             }
-
                       
         }
         PriorityQueue<Character> pq=new PriorityQueue<>((a,b)->hm.get(b)-hm.get(a));
