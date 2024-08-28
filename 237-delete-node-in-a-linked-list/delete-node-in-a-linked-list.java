@@ -8,8 +8,15 @@
  */
 class Solution {
     public void deleteNode(ListNode node) {
-        node.val=node.next.val;
-        node.next=node.next.next;
-        // return ListNode;   
+        
+
+        ListNode head=node;
+
+        ListNode temp=head;
+        temp.val=temp.next.val;
+        temp.next=head.next.next;
+        
+
+
     }
 }
