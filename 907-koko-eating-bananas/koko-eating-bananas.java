@@ -21,13 +21,13 @@ class Solution {
     }
 
     public boolean isValid(int[] piles,int h,int mid){
-        int totalHrs=0;
+        long totalHrs=0;
         for(int p:piles){
-            // totalHrs += p/mid;
-            // if(p % mid != 0) {
-            //     totalHrs++;
-            // }
-            totalHrs+=Math.ceil((double)p/(double)mid);
+            int div=p/mid;
+            totalHrs+=div;
+            if(p % mid!=0){
+                totalHrs++;
+            }
         }
         return totalHrs<= h;
     }
