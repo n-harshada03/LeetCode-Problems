@@ -1,21 +1,47 @@
 class Solution {
-    
-    public List<String> generateParenthesis(int n) {
-        List<String> list=new ArrayList<>();
-        int open=0,close=0;
-        helper(list, n, open, close, "");
-        return list;
+    // List<String> result;
+
+    boolean isValid(String curr){
+        int count=0;
+
+        for(int i=0;i<curr.length();i++){
+            char ch=curr.charAt(i);
+            if(ch=='('){
+                count++;
+            }
+            else{
+                count--;
+            }
+            if(count<0){
+                return false;
+            }
+        }
+        return count==0;
     }
 
-    public static void helper(List<String> list,int n,int open,int close,String currStr){
-        if(currStr.length()==n*2){
-            list.add(currStr);
+    void solve(List<String> result,String curr,int n){
+        if(curr.length()==2*n){
+            if(isValid(curr)){
+                result.add(curr);
+            }
+            return ;
         }
-        if(open<n){
-            helper(list,n,open+1,close,currStr+"(");
-        }
-        if(close<open){
-            helper(list,n,open,close+1,currStr+")");
-        }
+
+        
+        solve(result,curr +'(' ,n);
+        
+        solve(result,curr +')',n);
+        
+
+    } 
+    public List<String> generateParenthesis(int n) {
+        List<String> result = new ArrayList<>();
+
+        String curr="";
+
+        solve(result,curr,n);
+
+        return result;
+        
     }
 }
