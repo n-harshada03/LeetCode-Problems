@@ -1,5 +1,38 @@
 class Solution {
-    // List<String> result;
+
+    List<String> result = new ArrayList<>();
+
+    void solve(String curr,int open,int close, int n){
+        if(curr.length()==2*n){
+            result.add(curr);
+            return ;
+        }
+
+        if(open<n){
+            solve(curr +'(' ,open+1,close,n);
+        }
+        if(close<open){
+            solve(curr +')',open,close+1,n);
+        }
+        
+
+    } 
+    public List<String> generateParenthesis(int n) {
+        int open=0;
+        int close=0;
+
+        String curr="";
+
+        solve(curr,open,close, n);
+
+        return result;
+        
+    }
+}
+
+
+/*    BRUTE FORCE
+class Solution {
 
     boolean isValid(String curr){
         int count=0;
@@ -45,3 +78,5 @@ class Solution {
         
     }
 }
+
+*/
